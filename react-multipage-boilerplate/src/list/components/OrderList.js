@@ -27,6 +27,12 @@ const columns = [
         render: (text) => <a href="#">{text}</a>,
     },
     {
+        title: '预订人',
+        dataIndex: 'bookingPerson',
+        key: 'bookingPerson',
+        render: (text) => <a href="#">{text}</a>,
+    },
+    {
         title: '操作',
         dataIndex: 'operation',
         key: 'operation',
@@ -34,15 +40,37 @@ const columns = [
     }
 ];
 
+const pagination = {
+    total: 100,
+    showSizeChanger: true,
+    onShowSizeChange(current, pageSize) {
+        console.log('Current: ', current, '; PageSize: ', pageSize);
+    },
+    onChange(current) {
+        console.log('Current: ', current);
+    },
+};
+
 export default class OrderList extends Component {
     constructor(props) {
         super(props);
     }
 
+    mapPropToDataSource() {
+        return this.props.orderList.map((item, index) => {
+            let key = item.orderNo;
+            return Object.assign({}, item, {
+                key: key
+            })
+        });
+    }
+
     render() {
         return (
             <div>
-                <Table columns={columns} dataSource={this.props.list} />
+                <Table columns={columns} 
+                       dataSource={this.mapPropToDataSource() }
+                       pagination={pagination} />
             </div>
         );
     }

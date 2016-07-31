@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect'
 
-import OrderList from '../components/OrderList';
+import ListLayout from '../components/ListLayout';
 
-export default class ListContainer extends Component {
+class ListContainer extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
+        const { dispatch, list } = this.props;
         return (
             <div>
-                <OrderList />
+                <ListLayout {...list.toJS()} />
             </div>
         );
     }
 }
+
+const mapStateToProps = state => state;
+export default connect(mapStateToProps)(ListContainer);
