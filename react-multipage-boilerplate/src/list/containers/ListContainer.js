@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect'
+import { createSelector } from 'reselect';
 
 import ListLayout from '../components/ListLayout';
 
@@ -13,7 +13,7 @@ class ListContainer extends Component {
         const { dispatch, list } = this.props;
         return (
             <div>
-                <ListLayout {...list.toJS()} />
+                <ListLayout {...list.toJS() } />
             </div>
         );
     }

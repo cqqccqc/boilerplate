@@ -13,14 +13,14 @@ const vendors = [
     'redux-thunk',
     'redux-logger',
     'antd',
-    'babel-polyfill',
+    'babel-polyfill'
 ];
 
 module.exports = {
     output: {
         path: 'assets',
         filename: '[name].js',
-        library: '[name]',
+        library: '[name]'
     },
     entry: {
         'lib': vendors
