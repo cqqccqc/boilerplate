@@ -6,6 +6,7 @@
 npm install
 
 2.启动本地开发server
+
 npm run dev
 
 3.访问localhost:3000/list.html
