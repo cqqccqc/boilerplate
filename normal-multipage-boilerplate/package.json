@@ -1,0 +1,26 @@
+{
+  "name": "normal-multipage-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "watch": "webpack --watch -d",
+    "pkg": "webpack -d",
+    "lint": "eslint ."
+  },
+  "author": "q.chen",
+  "devDependencies": {
+    "babel-polyfill": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.9.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.4.3",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.0"
+  },
+  "dependencies": {
+    "history.js": "^1.8.0",
+    "jquery": "^1.12.2",
+    "underscore": "^1.8.3"
+  }
+}
