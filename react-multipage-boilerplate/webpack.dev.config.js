@@ -10,9 +10,16 @@ const buildPath = path.resolve(__dirname, 'assets');
 module.exports = {
     devtool: '#eval-source-map',
     entry: {
-        list: ['webpack-dev-server/client?http://localhost:3000',
+        list: [
+            'webpack-dev-server/client?http://localhost:3000',
             'webpack/hot/dev-server',
-            srcPath + 'list/index']
+            srcPath + 'list/index'
+        ],
+        detail: [
+            'webpack-dev-server/client?http://localhost:3000',
+            'webpack/hot/dev-server',
+            srcPath + 'list/index'
+        ]
     },
     output: {
         path: buildPath,
@@ -22,18 +29,21 @@ module.exports = {
     plugins: [
         commonsPlugin,
         new ExtractTextPlugin('[name].css'),
-        // new webpack.DllReferencePlugin({
-        //     context: __dirname,
-        //     manifest: require('./manifest.json')
-        // }),
 
         // for dev server
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
+            filename: 'list.html',
+            template: 'list.html',
+            excludeChunks: ['detail'],
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'detail.html',
+            template: 'detail.html',
+            excludeChunks: ['list'],
             inject: true
         })
     ],

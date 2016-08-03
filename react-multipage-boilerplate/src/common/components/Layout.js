@@ -29,9 +29,6 @@ export default class Layout extends Component {
                             </SubMenu>
                             <SubMenu key="sub3" title={<span><Icon type="notification" />活动</span>}>
                                 <Menu.Item key="5">关联</Menu.Item>
-                                <Menu.Item key="6">选项10</Menu.Item>
-                                <Menu.Item key="7">选项11</Menu.Item>
-                                <Menu.Item key="8">选项12</Menu.Item>
                             </SubMenu>
                         </Menu>
                     </aside>
@@ -50,7 +47,7 @@ export default class Layout extends Component {
                             </div>
                         </div>
                         <div className="ant-layout-footer">
-                            Ant Design 版权所有 © 2015 由蚂蚁金服体验技术部支持
+                            REACT TEST
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Breadcrumb, Icon } from 'antd';
+import { Breadcrumb } from 'antd';
 
 
 import Layout from '../../common/components/Layout';
@@ -17,13 +17,17 @@ export default class ListLayout extends Component {
         super(props);
     }
 
+    componentWillMount() {
+        console.log(this.props);
+        this.props.fetchOrder(1);
+    }
+
     render() {
-        console.log(this.props)
         return (
             <Layout {...this.props}
-                    header={'列表'}
+                    header={''}
                     breadcrumb={breadcrumb}
-                    content={OrderList}/>
+                    content={OrderList} />
         );
     }
 }

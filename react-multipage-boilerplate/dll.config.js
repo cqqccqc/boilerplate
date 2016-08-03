@@ -12,6 +12,9 @@ const vendors = [
     'redux-router',
     'redux-thunk',
     'redux-logger',
+    'redux-immutable',
+    'react-router-redux',
+    'reselect',
     'antd',
     'babel-polyfill'
 ];
@@ -32,4 +35,4 @@ module.exports = {
             context: __dirname
         })
     ]
-}
+};
